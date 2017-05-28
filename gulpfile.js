@@ -1,10 +1,9 @@
 var gulp = require('gulp');
-var less = require('gulp-less');
+var less = require('gulp-uglify');
 
-gulp.task('css', function(){
-  return gulp.src('src/css/*.less')
-    .pipe(less())
-    .pipe(gulp.dest('bin/css'))
+gulp.task('plugins', function(){
+  return gulp.src('src/**/*.js')
+    .pipe(gulp.dest('bin/release/plugins'));
 });
 
-gulp.task('default', ['css' ]);
+gulp.task('default', ['plugins' ]);
