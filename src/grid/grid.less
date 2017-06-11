@@ -1,0 +1,94 @@
+@grid-prefix : col-;
+@grid-spacing : 5px;
+@debug-row-color : yellow;
+@debug-row-shadow-color : #ff0000;
+@debug-cell-shadow-color : #00ff00;
+
+@retina:    ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+            ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+            ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+            ~"only screen and (min-device-pixel-ratio: 1.5)";
+@S:	      	~"only screen and (max-width: 480px)";
+@M:   		~"only screen and (min-width: 481px) and (max-width: 720px)";
+@L:   		~"only screen and (min-width: 721px) and (max-width: 1440px)";
+@XL: 		~"only screen and (min-width: 1441px)";
+
+@s:	   		~"only screen and (min-width: 0px)";
+@m:   		~"only screen and (min-width: 481px) ";
+@l:   		~"only screen and (min-width: 721px) ";
+@xl: 		~"only screen and (min-width: 1441px)";
+
+
+.rilGenerateGridColumns(@name; @columns; @index: 1) when (@index =< @columns) {
+  .rilGenerateGridColumns(@name; @columns; (@index + 1));
+    .@{grid-prefix}@{name}@{index} {
+    width: ( percentage(@index / @columns) );
+  }
+}
+
+.row {
+    margin-bottom: @grid-spacing;
+    margin-left: -1 * @grid-spacing;
+    &:after {
+        /* Or @extend clearfix */
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    [class*='col-'] {
+          float: left;
+          padding-left: @grid-spacing;
+        min-height: 1px;
+          &.ng, &:last-of-type {
+            //padding-right: 0;
+          }
+    }
+}
+
+
+.ng {
+    &.row{
+        margin-bottom:0;
+        margin-left:0;
+    }
+    &>[class*='col-']{
+        padding-left:0;
+    }
+    &[class*='col-']{
+        padding-left:0;
+    }
+}
+
+
+
+.rilGenerateGridColumns(~""; 12);
+@media @S {
+    .rilGenerateGridColumns(s-; 12);
+}
+@media @M {
+    .rilGenerateGridColumns(m-; 12);
+}
+@media @L {
+    .rilGenerateGridColumns(l-; 12);
+}
+@media @XL {
+    .rilGenerateGridColumns(xl-; 12);
+}
+
+
+
+.debug{
+    .row{
+        background: @debug-row-color;
+        -webkit-box-shadow: 0 0 5px 0px @debug-row-shadow-color;
+		-moz-box-shadow:    0 0 5px 0px @debug-row-shadow-color;
+		box-shadow:         0 0 5px 0px @debug-row-shadow-color;
+    }
+
+    [class*='col-'] {
+		-webkit-box-shadow: inset 0 0 10px 0px @debug-cell-shadow-color;
+		-moz-box-shadow:    inset 0 0 10px 0px @debug-cell-shadow-color;
+		box-shadow:         inset 0 0 10px 0px @debug-cell-shadow-color;
+    }
+}

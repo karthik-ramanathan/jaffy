@@ -1,0 +1,561 @@
+@font-face {
+	font-family: "jaffy";
+	src: url('../fonts/jaffy.eot');
+	src: url('../fonts/jaffy.eot?#iefix') format('eot'),
+		url('../fonts/jaffy.woff2') format('woff2'),
+		url('../fonts/jaffy.woff') format('woff'),
+		url('../fonts/jaffy.ttf') format('truetype'),
+		url('../fonts/jaffy.svg#jaffy') format('svg');
+}
+
+.i-base-pseudo {
+	font-family: "jaffy";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+.i-char(@filename) {
+	@add: "\E001";
+	@adduser: "\E002";
+	@alarm: "\E003";
+	@alert: "\E004";
+	@android: "\E005";
+	@apple: "\E006";
+	@arrow-left: "\E007";
+	@arrow-right: "\E008";
+	@attachment: "\E009";
+	@bad: "\E00A";
+	@barcode: "\E00B";
+	@battery1: "\E00C";
+	@battery2: "\E00D";
+	@battery3: "\E00E";
+	@battery4: "\E00F";
+	@bell: "\E010";
+	@books: "\E011";
+	@bug: "\E012";
+	@calendar: "\E013";
+	@cancel: "\E014";
+	@cancel3: "\E015";
+	@cart: "\E016";
+	@chat: "\E017";
+	@checked: "\E018";
+	@checkmark: "\E019";
+	@chrome: "\E01A";
+	@close: "\E01B";
+	@coffee: "\E01C";
+	@collapsed: "\E01D";
+	@comments: "\E01E";
+	@console: "\E01F";
+	@contacts: "\E020";
+	@create: "\E021";
+	@crop: "\E022";
+	@crosshairs: "\E023";
+	@cut: "\E024";
+	@disabled: "\E025";
+	@down: "\E026";
+	@download: "\E027";
+	@duplicate: "\E028";
+	@edit: "\E029";
+	@email: "\E02A";
+	@enter: "\E02B";
+	@expanded: "\E02C";
+	@eye: "\E02D";
+	@file: "\E02E";
+	@files: "\E02F";
+	@filter: "\E030";
+	@firefox: "\E031";
+	@folders: "\E032";
+	@forward: "\E033";
+	@geolocation: "\E034";
+	@good: "\E035";
+	@hammer: "\E036";
+	@heart: "\E037";
+	@home: "\E038";
+	@hourglass: "\E039";
+	@IE: "\E03A";
+	@image: "\E03B";
+	@inr: "\E03C";
+	@key: "\E03D";
+	@left: "\E03E";
+	@link: "\E03F";
+	@loader: "\E040";
+	@location: "\E041";
+	@locked: "\E042";
+	@login: "\E043";
+	@logout: "\E044";
+	@medal: "\E045";
+	@menu: "\E046";
+	@mic: "\E047";
+	@minus: "\E048";
+	@monitor: "\E049";
+	@move: "\E04A";
+	@mute: "\E04B";
+	@new: "\E04C";
+	@notice: "\E04D";
+	@ok: "\E04E";
+	@open-white: "\E04F";
+	@open: "\E050";
+	@opera: "\E051";
+	@pencil: "\E052";
+	@phone: "\E053";
+	@picture: "\E054";
+	@play: "\E055";
+	@plugin: "\E056";
+	@plus: "\E057";
+	@printer: "\E058";
+	@profile: "\E059";
+	@question-circle-o: "\E05A";
+	@question: "\E05B";
+	@read-inverted: "\E05C";
+	@read: "\E05D";
+	@refresh: "\E05E";
+	@refresh2: "\E05F";
+	@remove: "\E060";
+	@reply: "\E061";
+	@resize: "\E062";
+	@right: "\E063";
+	@rss: "\E064";
+	@save: "\E065";
+	@search: "\E066";
+	@selection: "\E067";
+	@settings: "\E068";
+	@share: "\E069";
+	@sign-out: "\E06A";
+	@smartphone: "\E06B";
+	@sms: "\E06C";
+	@source: "\E06D";
+	@star: "\E06E";
+	@stats: "\E06F";
+	@storage: "\E070";
+	@suitcase: "\E071";
+	@task: "\E072";
+	@ticket: "\E073";
+	@trash: "\E074";
+	@unchecked: "\E075";
+	@unlocked: "\E076";
+	@unread: "\E077";
+	@up: "\E078";
+	@upload: "\E079";
+	@usd: "\E07A";
+	@user: "\E07B";
+	@volume: "\E07C";
+	@warning: "\E07D";
+	@wifi: "\E07E";
+	@windows: "\E07F";
+	@youtube: "\E080";
+	@zoom-in: "\E081";
+	@zoom-out: "\E082";
+	@zoom: "\E083";
+	
+	content: @@filename;
+}
+
+.i(@filename, @insert: before) {
+	@pseudo-selector: ~":@{insert}";
+
+	&@{pseudo-selector} {
+		&:extend(.i-base-pseudo);
+		.i-char(@filename);
+	}
+}
+
+.i-add {
+	.i(add);
+}
+.i-adduser {
+	.i(adduser);
+}
+.i-alarm {
+	.i(alarm);
+}
+.i-alert {
+	.i(alert);
+}
+.i-android {
+	.i(android);
+}
+.i-apple {
+	.i(apple);
+}
+.i-arrow-left {
+	.i(arrow-left);
+}
+.i-arrow-right {
+	.i(arrow-right);
+}
+.i-attachment {
+	.i(attachment);
+}
+.i-bad {
+	.i(bad);
+}
+.i-barcode {
+	.i(barcode);
+}
+.i-battery1 {
+	.i(battery1);
+}
+.i-battery2 {
+	.i(battery2);
+}
+.i-battery3 {
+	.i(battery3);
+}
+.i-battery4 {
+	.i(battery4);
+}
+.i-bell {
+	.i(bell);
+}
+.i-books {
+	.i(books);
+}
+.i-bug {
+	.i(bug);
+}
+.i-calendar {
+	.i(calendar);
+}
+.i-cancel {
+	.i(cancel);
+}
+.i-cancel3 {
+	.i(cancel3);
+}
+.i-cart {
+	.i(cart);
+}
+.i-chat {
+	.i(chat);
+}
+.i-checked {
+	.i(checked);
+}
+.i-checkmark {
+	.i(checkmark);
+}
+.i-chrome {
+	.i(chrome);
+}
+.i-close {
+	.i(close);
+}
+.i-coffee {
+	.i(coffee);
+}
+.i-collapsed {
+	.i(collapsed);
+}
+.i-comments {
+	.i(comments);
+}
+.i-console {
+	.i(console);
+}
+.i-contacts {
+	.i(contacts);
+}
+.i-create {
+	.i(create);
+}
+.i-crop {
+	.i(crop);
+}
+.i-crosshairs {
+	.i(crosshairs);
+}
+.i-cut {
+	.i(cut);
+}
+.i-disabled {
+	.i(disabled);
+}
+.i-down {
+	.i(down);
+}
+.i-download {
+	.i(download);
+}
+.i-duplicate {
+	.i(duplicate);
+}
+.i-edit {
+	.i(edit);
+}
+.i-email {
+	.i(email);
+}
+.i-enter {
+	.i(enter);
+}
+.i-expanded {
+	.i(expanded);
+}
+.i-eye {
+	.i(eye);
+}
+.i-file {
+	.i(file);
+}
+.i-files {
+	.i(files);
+}
+.i-filter {
+	.i(filter);
+}
+.i-firefox {
+	.i(firefox);
+}
+.i-folders {
+	.i(folders);
+}
+.i-forward {
+	.i(forward);
+}
+.i-geolocation {
+	.i(geolocation);
+}
+.i-good {
+	.i(good);
+}
+.i-hammer {
+	.i(hammer);
+}
+.i-heart {
+	.i(heart);
+}
+.i-home {
+	.i(home);
+}
+.i-hourglass {
+	.i(hourglass);
+}
+.i-IE {
+	.i(IE);
+}
+.i-image {
+	.i(image);
+}
+.i-inr {
+	.i(inr);
+}
+.i-key {
+	.i(key);
+}
+.i-left {
+	.i(left);
+}
+.i-link {
+	.i(link);
+}
+.i-loader {
+	.i(loader);
+}
+.i-location {
+	.i(location);
+}
+.i-locked {
+	.i(locked);
+}
+.i-login {
+	.i(login);
+}
+.i-logout {
+	.i(logout);
+}
+.i-medal {
+	.i(medal);
+}
+.i-menu {
+	.i(menu);
+}
+.i-mic {
+	.i(mic);
+}
+.i-minus {
+	.i(minus);
+}
+.i-monitor {
+	.i(monitor);
+}
+.i-move {
+	.i(move);
+}
+.i-mute {
+	.i(mute);
+}
+.i-new {
+	.i(new);
+}
+.i-notice {
+	.i(notice);
+}
+.i-ok {
+	.i(ok);
+}
+.i-open-white {
+	.i(open-white);
+}
+.i-open {
+	.i(open);
+}
+.i-opera {
+	.i(opera);
+}
+.i-pencil {
+	.i(pencil);
+}
+.i-phone {
+	.i(phone);
+}
+.i-picture {
+	.i(picture);
+}
+.i-play {
+	.i(play);
+}
+.i-plugin {
+	.i(plugin);
+}
+.i-plus {
+	.i(plus);
+}
+.i-printer {
+	.i(printer);
+}
+.i-profile {
+	.i(profile);
+}
+.i-question-circle-o {
+	.i(question-circle-o);
+}
+.i-question {
+	.i(question);
+}
+.i-read-inverted {
+	.i(read-inverted);
+}
+.i-read {
+	.i(read);
+}
+.i-refresh {
+	.i(refresh);
+}
+.i-refresh2 {
+	.i(refresh2);
+}
+.i-remove {
+	.i(remove);
+}
+.i-reply {
+	.i(reply);
+}
+.i-resize {
+	.i(resize);
+}
+.i-right {
+	.i(right);
+}
+.i-rss {
+	.i(rss);
+}
+.i-save {
+	.i(save);
+}
+.i-search {
+	.i(search);
+}
+.i-selection {
+	.i(selection);
+}
+.i-settings {
+	.i(settings);
+}
+.i-share {
+	.i(share);
+}
+.i-sign-out {
+	.i(sign-out);
+}
+.i-smartphone {
+	.i(smartphone);
+}
+.i-sms {
+	.i(sms);
+}
+.i-source {
+	.i(source);
+}
+.i-star {
+	.i(star);
+}
+.i-stats {
+	.i(stats);
+}
+.i-storage {
+	.i(storage);
+}
+.i-suitcase {
+	.i(suitcase);
+}
+.i-task {
+	.i(task);
+}
+.i-ticket {
+	.i(ticket);
+}
+.i-trash {
+	.i(trash);
+}
+.i-unchecked {
+	.i(unchecked);
+}
+.i-unlocked {
+	.i(unlocked);
+}
+.i-unread {
+	.i(unread);
+}
+.i-up {
+	.i(up);
+}
+.i-upload {
+	.i(upload);
+}
+.i-usd {
+	.i(usd);
+}
+.i-user {
+	.i(user);
+}
+.i-volume {
+	.i(volume);
+}
+.i-warning {
+	.i(warning);
+}
+.i-wifi {
+	.i(wifi);
+}
+.i-windows {
+	.i(windows);
+}
+.i-youtube {
+	.i(youtube);
+}
+.i-zoom-in {
+	.i(zoom-in);
+}
+.i-zoom-out {
+	.i(zoom-out);
+}
+.i-zoom {
+	.i(zoom);
+}
+

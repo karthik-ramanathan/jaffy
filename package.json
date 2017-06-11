@@ -2,7 +2,7 @@
   "name": "jaffy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "start": "gulp"
   },
@@ -24,9 +24,12 @@
     "plugin": "^0.3.3",
     "gulp-if": "^2.0.2",
     "gulp-watch": "^4.3.11",
-    "gulp-sequence": "^0.4.6"
+    "gulp-sequence": "^0.4.6",
+    "gulp-css-iconfont": "0.0.1",
+    "gulp-iconfont": "^8.0.1"
   },
   "dependencies": {
-
+    "gulp-sequence": "^0.4.6",
+    "node-gyp": "^3.6.2"
   }
 }
