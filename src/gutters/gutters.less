@@ -1,0 +1,33 @@
+@helpers: p padding,m margin;
+@sizes : 0, 5, 10, 15, 20;
+@directionsClass: ~"" ,t, l, r, b;
+@directions: ~"", -top, -left, -right, -bottom;
+
+.helpers(@h) when (@h > 0) {
+	@helper: extract(@helpers, @h);
+  	@helperLabel: extract(@helper, 1);
+  	@helperExpress: extract(@helper, 2);
+  
+  
+.direction(@d) when (@d > 0) {
+  @type: extract(@directionsClass, @d);
+  @label: extract(@directions, @d);
+  
+  
+.sizes(@s) when (@s > 0) {
+  @size: extract(@sizes, @s);
+  .@{helperLabel}@{type}@{size} {
+    @{helperExpress}@{label}: ~"@{size}px";
+  }
+  .sizes((@s - 1));
+}
+.sizes(length(@sizes));
+  .direction((@d - 1));
+}
+.direction(length(@directionsClass));
+  
+  
+
+  .helpers((@h - 1));
+}
+.helpers(length(@helpers));
