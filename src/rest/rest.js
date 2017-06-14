@@ -170,6 +170,8 @@ window.jaffy.RestAPI = function() {
 				$.ajax(config).then(function(data){
 					if(successCallback && typeof successCallback === "function"){
 						successCallback.call({scope: this.scope}, data);
+					}else{
+						console.log("REST: " + config.method + "://" + config.url, data);
 					}
 				});
 			}else{
